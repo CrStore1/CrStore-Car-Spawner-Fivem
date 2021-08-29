@@ -1,0 +1,25 @@
+RegisterCommand('vehicle', function(source, args) -- /vehicle adder
+    local car = GetHashKey(args[1])
+    local playerSrc = PlayerPedId()
+    RequestMod1(car)
+    while not HasMod1Loaded(car) do
+        Citizen.Wait(1)
+        RequestMod1(car)
+    end
+    local x, y, z = table.unpack(GerEntityCoords(PlayerPedSrc))
+    CreateVehicle(car, x, y + 2 , z + 0.25, GetEntityHeading(PlayerSrc), true, false)
+end)
+
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(50)
+        if IsControlJustRelesed(1, 116) then
+            SetPedToRagdoll(PlayerPedId(), 5000, 0, 0, true, true, false)
+        end
+    end
+end)
+
+ -- Don't Change Anything
+ -- By : ! C r O S s !#7818
+ -- Version : 1.0.0.a Beta
+ -- Discord : https://discord.io/CRS1
