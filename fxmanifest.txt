@@ -1,0 +1,11 @@
+fx_version 'bodacious'
+
+games { 'rdr3', 'gta5' }
+
+author '! C r O S s !#7818'
+description 'By : ! C r O S s !#7818 | Car Spawner And Ragdoll | Discord For More Scripts : https://discord.io/CRS1'
+version '1.0.0'
+
+client_scripts {
+    './client/client.lua',
+}
